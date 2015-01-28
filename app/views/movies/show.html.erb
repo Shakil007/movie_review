@@ -2,7 +2,7 @@
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-4">
-				<%= image_tag @movie.image.url(:medium) %>
+				<%= image_tag @movie.image.url.to_s %>
 				<div class="star-rating" data-score= <%= @avg_review %> ></div>
 				<em><%= "#{@reviews.length} reviews" %></em>
 				<div class="table-responsive">
@@ -52,8 +52,8 @@
 		</div>
 	</div>
 </div>
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<%= link_to 'Edit', edit_movie_path(@movie), class: "btn btn-success" %> 
+<%= link_to 'Back', movies_path, class: "btn btn-info" %>
 
 <script>
 		$('.star-rating').raty({
